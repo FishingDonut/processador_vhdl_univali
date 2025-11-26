@@ -29,18 +29,18 @@ begin
 	-- Connect DUV
   	u_DUV: entity work.RISCV32i 
   			 port map(
-             	i_CLK  		=> w_CLK,
-    			i_RSTn		=> w_RSTn,
-                o_INST  	=> w_INST,
-                o_OPCODE	=> w_OPCODE,
-    			o_RD_ADDR	=> w_RD_ADDR,
-    			o_RS1_ADDR 	=> w_RS1_ADDR,
-    			o_RS2_ADDR 	=> w_RS2_ADDR,
-    			o_RS1_DATA 	=> w_RS1_DATA,
-    			o_RS2_DATA 	=> w_RS2_DATA,
-    			o_IMM   	=> w_IMM,
-            	o_ULA   	=> w_ULA,
-                o_MEM   	=> w_MEM
+             	i_CLK  		  => w_CLK,
+    			    i_RSTn		  => w_RSTn,
+              o_INST  	  => w_INST,
+              o_OPCODE	  => w_OPCODE,
+    			    o_RD_ADDR	  => w_RD_ADDR,
+    			    o_RS1_ADDR 	=> w_RS1_ADDR,
+    			    o_RS2_ADDR 	=> w_RS2_ADDR,
+    			    o_RS1_DATA 	=> w_RS1_DATA,
+              o_RS2_DATA 	=> w_RS2_DATA,
+              o_IMM   	  => w_IMM,
+            	o_ULA   	  => w_ULA,
+              o_MEM   	  => w_MEM
 	);
 
 	-- Gerador de CLOCK
