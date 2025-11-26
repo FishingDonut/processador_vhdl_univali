@@ -23,21 +23,31 @@ end ULA;
 
 architecture a1 of ULA is
 
+    signal w_ULA : std_logic_vector(31 downto 0);
+
 begin
 	process(i_A, i_B,i_ALUOP)
     begin
     	if (i_ALUOP = "000") then
-            o_ULA <= i_A + i_B; -- ADD
+            w_ULA <= i_A + i_B; -- ADD
         elsif (i_ALUOP = "001") then
-            o_ULA <= i_A - i_B; -- SUB
+            w_ULA <= i_A - i_B; -- SUB
         elsif (i_ALUOP = "010") then
-            o_ULA <= i_A and i_B; -- AND
+            w_ULA <= i_A and i_B; -- AND
         elsif (i_ALUOP = "011") then
-            o_ULA <= i_A or i_B; -- OR
+            w_ULA <= i_A or i_B; -- OR
         elsif (i_ALUOP = "100") then
-            o_ULA <= i_A xor i_B; -- XOR
+            w_ULA <= i_A xor i_B; -- XOR
         else
-            o_ULA <= i_A + i_B; -- padrao ADD
+            w_ULA <= i_A + i_B; -- padrao ADD
         end if;
+
+        if (w_ULA = x"00000000") then
+            o_ZERO <= '1';
+        else
+            o_ZERO <= '0';
+        end if;
+            
+        o_ULA <= w_ULA; -- define a saida da ula
     end process;
 end a1;
