@@ -12,9 +12,9 @@ entity ULA is
         i_B  		: in  std_logic_vector(31 downto 0);
         i_CODE      : IN  std_logic_vector(6 DOWNTO 0); -- 7 bits operacao
         i_F3 		: in  std_logic_vector(2 downto 0);
-        i_INST30	: in std_logic;
+        i_INST30	: in  std_logic;
         i_ALUOP     : in  std_logic_vector(2 downto 0); -- 3 bits operacao
-        o_ZERO		: in std_logic;
+        o_ZERO		: out std_logic;
         o_ULA  		: out std_logic_vector(31 downto 0)
     );
 
