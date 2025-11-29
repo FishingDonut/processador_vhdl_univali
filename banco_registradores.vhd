@@ -14,7 +14,8 @@ entity banco_registradores is
             i_RS2 	: in std_logic_vector(4 downto 0);
             i_DATA 	: in std_logic_vector(31 downto 0);
             o_RS1 	: out std_logic_vector(31 downto 0);
-            o_RS2 	: out std_logic_vector(31 downto 0)
+            o_RS2 	: out std_logic_vector(31 downto 0);
+            o_WR    : out std_logic_vector(31 downto 0)
          );
 end banco_registradores;
 
@@ -37,5 +38,6 @@ begin
 
     o_RS1 <= w_REG(conv_integer(i_RS1)) when i_RS1 /= "00000" else (others => '0');   -- mostra conteúdo do registrador apontado por i_RS1 ou zero, se for apontado o registrador zero
     o_RS2 <= w_REG(conv_integer(i_RS2)) when i_RS2 /= "00000" else (others => '0');   -- mostra conteúdo do registrador apontado por i_RS2
+    o_WR  <= i_DATA when (i_WRena = '1' and i_WRaddr /= "00000") else w_REG(conv_integer(i_WRaddr)) when i_WRaddr /= "00000" else (others => '0'); -- mostra conteúdo do registrador apontado por i_WRaddr
 
 end arch_1;

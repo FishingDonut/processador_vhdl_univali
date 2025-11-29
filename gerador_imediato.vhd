@@ -25,8 +25,8 @@ begin
             when ("1100011") => w_TEMP <= w_TYPE_B; --BRANCH
             when ("1100111") => w_TEMP <= w_TYPE_I; --JALR
             when ("1101111") => w_TEMP <= w_TYPE_J;	--JAL
-            when "0110111"   => w_TEMP <= w_TYPE_U; --LUI
-            when "0010111"   => w_TEMP <= w_TYPE_U; --AUIPC
+            when ("0110111") => w_TEMP <= w_TYPE_U; --LUI
+            when ("0010111") => w_TEMP <= w_TYPE_U; --AUIPC
             when others => w_TEMP <= (others => '0');
         end case;       
     end process ; 

@@ -5,16 +5,17 @@ use ieee.std_logic_unsigned.all;
 entity controle is
 
     Port (	
-            i_OPCODE  	: in std_logic_vector(6 downto 0); --- Entrada, 7 bits separados da memoria de instrucoes
-            i_FUNCT3    : in std_logic_vector(2 downto 0); -- funct3 for R-type
-            i_FUNCT7    : in std_logic_vector(6 downto 0); -- funct7 for R-type
-            o_ALU_SRC   : out std_logic; -- sinal de controle para o mux da ULA
-            o_MEM2REG    : out std_logic; -- sinal de controle para o mux de escrita no banco
-            o_REG_WRITE : out std_logic; -- sinal de controle para escrita no banco de registradores
-            o_MEM_READ  : out std_logic; -- sinal de controle para leitura na memoria de dados
-            o_MEM_WRITE : out std_logic; -- sinal de controle para escrita na memoria de dados
-            o_ALUOP    : out std_logic_vector(2 downto 0) -- sinal de controle para a ULA
-            --o_MEM_WRITE : out std_logic -- sinal de controle para escrita na memoria            o_ALUOP    : out std_logic_vector(1 downto 0) -- sinal de controle para a ULA
+            i_OPCODE  	: in std_logic_vector(6 downto 0);  --- Entrada, 7 bits separados da memoria de instrucoes
+            i_FUNCT3    : in std_logic_vector(2 downto 0);  -- funct3 for R-type
+            i_FUNCT7    : in std_logic_vector(6 downto 0);  -- funct7 for R-type
+            o_ALU_SRC   : out std_logic;                    -- sinal de controle para o mux da ULA
+            o_MEM2REG    : out std_logic;                   -- sinal de controle para o mux de escrita no banco
+            o_REG_WRITE : out std_logic;                    -- sinal de controle para escrita no banco de registradores
+            o_MEM_READ  : out std_logic;                    -- sinal de controle para leitura na memoria de dados
+            o_MEM_WRITE : out std_logic;                    -- sinal de controle para escrita na memoria de dados
+            o_ALUOP    : out std_logic_vector(2 downto 0);  -- sinal de controle para a ULA
+            o_MEM_WRITE : out std_logic;                    -- sinal de controle para escrita na memoria            
+            o_ALUOP    : out std_logic_vector(1 downto 0)   -- sinal de controle para a ULA
          );
 end controle;
 
